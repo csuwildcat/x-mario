@@ -1,3 +1,77 @@
-x-stub {
-  display: block; 
+
+x-mario {
+  display: inline-block;
+  height: 9%;
+}
+
+x-mario img {
+  display: block;
+  height: 100%;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 0.75s ease;
+}
+
+x-mario.jumping {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  -webkit-animation: mario-jump 0.7s cubic-bezier(0.9, 0.9, 0.7, 0.8);
+  animation: mario-jump 0.7s cubic-bezier(0.9, 0.9, 0.7, 0.8);
+}
+
+x-mario[super-mario] img {
+  -webkit-transform: scale(1.4) translateY(-14%);
+  transform: scale(1.4) translateY(-14%);
+}
+
+x-mario[super-mario].jumping {
+  -webkit-animation: super-mario-jump 0.7s cubic-bezier(0.9, 0.9, 0.7, 0.8);
+  animation: super-mario-jump 0.7s cubic-bezier(0.9, 0.9, 0.7, 0.8);
+}
+
+@keyframes mario-jump {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes mario-jump {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(-200%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@keyframes super-mario-jump {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-250%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes super-mario-jump {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(-250%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
 }
